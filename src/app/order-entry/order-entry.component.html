@@ -1,0 +1,51 @@
+<div class="pizza-order">
+    <table>
+      <thead>
+        <tr>
+          <th>Toppings</th>
+          <th *ngFor="let size of sizes">
+            {{ size.name }} (${{ size.price }})
+            <div>
+              <button (click)="decreaseQuantity(size)">-</button>
+              {{ getQuantity(size) }}
+              <button (click)="increaseQuantity(size)">+</button>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th colspan="5">Veg Toppings</th></tr>
+        <tr *ngFor="let topping of toppings">
+          <ng-container *ngIf="topping.type === 'veg'">
+            <td>{{ topping.name }} (${{ topping.price.toFixed(2) }})</td>
+            <td *ngFor="let size of sizes" class="checkbox-cell">
+              <input type="checkbox"
+                     (change)="toggleTopping(size, topping)" 
+                     [checked]="isToppingSelected(size, topping.name)">
+            </td>
+          </ng-container>
+        </tr>
+        <tr><th colspan="5">Non-Veg Toppings</th></tr>
+        <tr *ngFor="let topping of toppings">
+          <ng-container *ngIf="topping.type === 'non-veg'">
+            <td>{{ topping.name }} (${{ topping.price.toFixed(2) }})</td>
+            <td *ngFor="let size of sizes" class="checkbox-cell">
+              <input type="checkbox"
+                     (change)="toggleTopping(size, topping)" 
+                     [checked]="isToppingSelected(size, topping.name)">
+            </td>
+          </ng-container>
+        </tr>
+        <tr>
+          <td>Subtotal</td>
+          <td *ngFor="let size of sizes">${{ getSizeSubtotal(size).toFixed(2) }}</td>
+        </tr>
+        <tr>
+          <td colspan="5">Total: ${{ total.toFixed(2) }}</td>
+        </tr>
+        <tr *ngIf="offer">
+            <td colspan="5"><strong>Applied Offers:</strong> {{ offer }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
