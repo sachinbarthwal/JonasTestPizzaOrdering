@@ -1,5 +1,35 @@
 # PizzaOrderingSystem
 
+## Overview
+This project implements a simple pizza ordering system, including various pizza sizes, toppings, and promotional offers. 
+
+## Features Implemented
+
+### Pizza Sizes
+- Small
+- Medium
+- Large
+- Extra Large
+
+### Toppings
+
+#### Veg Options:
+- Tomatoes
+- Onions
+- Bell Pepper
+- Mushrooms
+- Pineapple
+
+#### Non-Veg Options:
+- Sausage
+- Pepperoni
+- Barbecue Chicken
+
+### Promotional Offers
+- Offer 1: 1 Medium Pizza with 2 toppings
+- Offer 2: 2 Medium Pizzas with 4 toppings each
+- Offer 3: 1 Large Pizza with 4 toppings (Pepperoni and Barbecue Chicken count as 2 toppings each) - 50% discount
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
 
 ## Development server
@@ -14,14 +44,5 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+# Simple Pizza Ordering System
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
